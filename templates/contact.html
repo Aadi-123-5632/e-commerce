@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+{% block body%}
+<style>
+  body {
+    
+    background-image: url('/static/img/sss.jpg');
+    background-size: cover;
+  </style>
+<div class="container-fluid px-0">
+</div>
+<div class="container">
+<h1 class="text-center">Contact Us</h1>
+<h5>Reach Us :- </h5>
+<h7>NH 730C, Simara Harchand Singh, Uttar Pradesh 243506</h7>
+<h6>Call Us :-</h6>
+<h7>9557452434</h7>
+<form method="post" action="/contact">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="name">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+      </div>
+      <div class="form-group">
+        <label for="Phone"></label>Phone</label>
+        <input type="number" class="form-control" id="Phone" name="Phone" placeholder="Write your Phone">
+      </div>
+    <div class="form-group">
+      <label for="desc">Write your query here!!!!</label>
+      <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+    </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+    {% endblock body %}
+
